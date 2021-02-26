@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------
 -- Microsoft SQL Server T-SQL Fundamentals
 -- Chapter 03 - Joins
--- © Itzik Ben-Gan 
+-- ï¿½ Itzik Ben-Gan 
 ---------------------------------------------------------------------
 
 ---------------------------------------------------------------------
@@ -115,6 +115,9 @@ FROM Sales.OrderDetails AS OD
     ON OD.orderid = ODA.orderid
     AND OD.productid = ODA.productid
 WHERE ODA.columnname = N'qty';
+
+-- Edit- Not completely sure what the above is supposed to do. 
+
 
 ---------------------------------------------------------------------
 -- Non-Equi Joins

@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------
 -- Microsoft SQL Server T-SQL Fundamentals
 -- Chapter 01 - Background to T-SQL Querying and Programming
--- © Itzik Ben-Gan 
+-- ï¿½ Itzik Ben-Gan 
 ---------------------------------------------------------------------
 
 ---------------------------------------------------------------------
@@ -65,11 +65,30 @@ CREATE TABLE dbo.Orders
     PRIMARY KEY(orderid)
 );
 
+/*
+Got error when trying to create table dbo.Orders
+
+ [15:08:34]	Started executing query at Line 1
+Msg 2714, Level 16, State 6, Line 1
+There is already an object named 'Orders' in the database. 
+Total execution time: 00:00:00.029 */
+
+
+
 -- Foreign keys
 ALTER TABLE dbo.Orders
   ADD CONSTRAINT FK_Orders_Employees
   FOREIGN KEY(empid)
-  REFERENCES dbo.Employees(empid);
+  REFERENCES dbo.Employees(empid);CREATE TABLE dbo.Orders
+(
+  orderid   INT         NOT NULL,
+  empid     INT         NOT NULL,
+  custid    VARCHAR(10) NOT NULL,
+  orderts   DATETIME2   NOT NULL,
+  qty       INT         NOT NULL,
+  CONSTRAINT PK_Orders
+    PRIMARY KEY(orderid)
+);
 
 ALTER TABLE dbo.Employees
   ADD CONSTRAINT FK_Employees_Employees
